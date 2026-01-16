@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqdhpig7qnq60"]
+
+[ext_resource type="Script" uid="uid://bjhg2jw4daq80" path="res://assets/godot/player_controller.gd" id="1_qku4l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yy5vu"]
+
+[node name="PlayerController" type="CharacterBody3D"]
+script = ExtResource("1_qku4l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_yy5vu")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4594165, 0)

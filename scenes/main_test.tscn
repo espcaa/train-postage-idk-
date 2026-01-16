@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://c54h4fd4hbqkk"]
+[gd_scene load_steps=3 format=3 uid="uid://c54h4fd4hbqkk"]
+
+[ext_resource type="PackedScene" uid="uid://kus1gfckpnqt" path="res://assets/godot/environment/ground.tscn" id="1_pmgw1"]
+[ext_resource type="PackedScene" uid="uid://bqdhpig7qnq60" path="res://assets/godot/player_controller.tscn" id="2_0s8vl"]
 
 [node name="main_test" type="Node3D"]
+
+[node name="ground" parent="." instance=ExtResource("1_pmgw1")]
+
+[node name="PlayerController" parent="ground" instance=ExtResource("2_0s8vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7665751, 0)
