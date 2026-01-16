@@ -1,11 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://c54h4fd4hbqkk"]
+[gd_scene load_steps=6 format=3 uid="uid://c54h4fd4hbqkk"]
 
 [ext_resource type="PackedScene" uid="uid://kus1gfckpnqt" path="res://assets/godot/environment/ground.tscn" id="1_pmgw1"]
 [ext_resource type="PackedScene" uid="uid://bqdhpig7qnq60" path="res://assets/godot/player_controller.tscn" id="2_0s8vl"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0s8vl"]
+sky_top_color = Color(0.23137255, 0.7254902, 0.8862745, 1)
+sky_horizon_color = Color(0.81704056, 0.8324237, 0.8512406, 1)
+sky_curve = 0.07500002
+ground_bottom_color = Color(0.19489405, 0.12991911, 0.04112251, 1)
+
+[sub_resource type="Sky" id="Sky_fodur"]
+sky_material = SubResource("ProceduralSkyMaterial_0s8vl")
+
+[sub_resource type="Environment" id="Environment_6kql7"]
+background_mode = 2
+sky = SubResource("Sky_fodur")
+
 [node name="main_test" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="ground" parent="." instance=ExtResource("1_pmgw1")]
 
 [node name="PlayerController" parent="ground" instance=ExtResource("2_0s8vl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7665751, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6kql7")
