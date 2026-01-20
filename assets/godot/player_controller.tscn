@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqdhpig7qnq60"]
+[gd_scene load_steps=4 format=3 uid="uid://bqdhpig7qnq60"]
 
 [ext_resource type="Script" uid="uid://bjhg2jw4daq80" path="res://assets/godot/player_controller.gd" id="1_qku4l"]
+[ext_resource type="PackedScene" uid="uid://b82p568v27n36" path="res://assets/godot/hud.tscn" id="2_ycn37"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yy5vu"]
 
@@ -15,3 +16,5 @@ transform = Transform3D(1, 0, 0, 0, 0.9833216, -0.18187512, 0, 0.18187512, 0.983
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4594165, 0)
+
+[node name="Hud" parent="Pivot/Camera3D" instance=ExtResource("2_ycn37")]
