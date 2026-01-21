@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c54h4fd4hbqkk"]
+[gd_scene load_steps=7 format=3 uid="uid://c54h4fd4hbqkk"]
 
 [ext_resource type="PackedScene" uid="uid://kus1gfckpnqt" path="res://assets/godot/environment/ground.tscn" id="1_pmgw1"]
 [ext_resource type="PackedScene" uid="uid://bqdhpig7qnq60" path="res://assets/godot/player_controller.tscn" id="2_0s8vl"]
+[ext_resource type="PackedScene" uid="uid://bk6se10dg6alf" path="res://assets/3d-source/package.blend" id="3_fodur"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0s8vl"]
 sky_top_color = Color(0.23137255, 0.7254902, 0.8862745, 1)
@@ -35,3 +36,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7665751, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6kql7")
+
+[node name="package" parent="." instance=ExtResource("3_fodur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5323167, 1, -1.3664657)
