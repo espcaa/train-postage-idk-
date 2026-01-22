@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://kxfwlv6egyt2"]
+
+[ext_resource type="PackedScene" uid="uid://drfe8ut1dkexh" path="res://assets/3d-source/package.blend" id="1_y5vkf"]
+[ext_resource type="PackedScene" uid="uid://boraegb7htw56" path="res://scenes/pickable_object.tscn" id="2_bfkic"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y5vkf"]
+size = Vector3(0.9151001, 0.67736816, 0.5831299)
+
+[node name="package" type="RigidBody3D"]
+
+[node name="package" parent="." instance=ExtResource("1_y5vkf")]
+
+[node name="collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2046814, -0.0006713867, -0.0018920898)
+shape = SubResource("BoxShape3D_y5vkf")
+
+[node name="PickableObject" parent="." instance=ExtResource("2_bfkic")]
+
+[editable path="package"]

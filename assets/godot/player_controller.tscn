@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b82p568v27n36" path="res://assets/godot/hud.tscn" id="2_ycn37"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yy5vu"]
+radius = 0.40576172
 
 [node name="PlayerController" type="CharacterBody3D"]
 script = ExtResource("1_qku4l")
