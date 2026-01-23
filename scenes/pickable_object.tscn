@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://ds8r4fdqyibic" path="res://scenes/pickable_object.gd" id="1_thpd4"]
 
-[node name="PickableObject" type="Node3D"]
+[node name="PickableObject" type="Node3D" groups=["pickable_objects"]]
 script = ExtResource("1_thpd4")

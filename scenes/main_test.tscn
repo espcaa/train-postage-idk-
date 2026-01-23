@@ -34,9 +34,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7665751, 0)
 [node name="ground2" parent="." instance=ExtResource("1_pmgw1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9297943, 0, -5.2965736)
 
-[node name="PlayerController" parent="ground2" instance=ExtResource("2_0s8vl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7665751, 0)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6kql7")
 

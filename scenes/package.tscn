@@ -14,6 +14,7 @@ size = Vector3(0.9151001, 0.67736816, 0.5831299)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2046814, -0.0006713867, -0.0018920898)
 shape = SubResource("BoxShape3D_y5vkf")
 
-[node name="PickableObject" parent="." instance=ExtResource("2_bfkic")]
+[node name="PickableObject" parent="." node_paths=PackedStringArray("highlighted_meshes") instance=ExtResource("2_bfkic")]
+highlighted_meshes = [NodePath("../package/Cube_001"), NodePath("../package/Cube_003"), NodePath("../package/Cube_002")]
 
 [editable path="package"]
