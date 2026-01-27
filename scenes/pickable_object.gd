@@ -12,10 +12,11 @@ func _ready() -> void:
 	outline_material.albedo_color = Color(1, 1, 1)  # Yellow
 	outline_material.cull_mode = BaseMaterial3D.CULL_FRONT
 	outline_material.grow = true
-	outline_material.grow_amount = 0.03
+	outline_material.grow_amount = 1.0
 	
 	overlay_material = StandardMaterial3D.new()
 	overlay_material.stencil_mode = BaseMaterial3D.STENCIL_MODE_OUTLINE
+	overlay_material.stencil_compare = BaseMaterial3D.STENCIL_COMPARE_NOT_EQUAL
 	overlay_material.stencil_reference = 1
 	overlay_material.next_pass = outline_material
 	

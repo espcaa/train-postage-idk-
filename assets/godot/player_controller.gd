@@ -10,6 +10,7 @@ const AIR_ACCEL = 3.0
 
 var mouse_input := Vector2.ZERO
 var current_highlighted: PickableObject = null
+var held_body: RigidBody3D = null
 
 
 func _ready() -> void:
@@ -19,6 +20,17 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		mouse_input = event.relative
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pick_object"):
+		if held_body:
+			held_body = null
+		else:
+			if $Pivot/Camera3D/RayCast3D.is_colliding():
+				var collider = $Pivot/Camera3D/RayCast3D.get_collider()
+				if collider is RigidBody3D:
+					held_body = collider
 
 
 func _process(_delta):
@@ -39,6 +51,18 @@ func _update_camera():
 
 
 func _physics_process(delta: float) -> void:
+	# object holding
+
+	if held_body:
+		var target_pos = $Pivot/Camera3D/HoldPoint.global_position
+		var dir = target_pos - held_body.global_position
+
+		var force = dir * 40.0  # tweak strength
+		held_body.apply_central_force(force)
+
+		# optional damping to stop jitter
+		held_body.linear_damp = 6.0
+
 	# gravity stuff \o/
 	if not is_on_floor():
 		velocity += get_gravity() * delta

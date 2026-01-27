@@ -23,3 +23,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4594165, 0)
 [node name="RayCast3D" type="RayCast3D" parent="Pivot/Camera3D"]
 transform = Transform3D(-4.371139e-08, 0, -0.99999994, 0, 0.99999994, 0, 1, 0, -4.3711385e-08, 0, 0, 0)
 target_position = Vector3(-2, 0, 0)
+
+[node name="HoldPoint" type="Marker3D" parent="Pivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35531998, 0.10067335, -0.8343091)
