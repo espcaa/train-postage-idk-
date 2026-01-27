@@ -3,7 +3,10 @@ extends CharacterBody3D
 const SPEED = 5.0
 const ACCEL = 10.0
 const JUMP_VELOCITY = 4.5
-@export var PULL_POWER: float = 20.0
+@export var PULL_POWER: float = 2.0
+@export var coyote_time: float = 0.2
+
+var time_since_floor: float = 0.0
 
 const AIR_ACCEL = 3.0
 
@@ -54,18 +57,21 @@ func _update_camera():
 
 
 func _physics_process(delta: float) -> void:
-	
 	# totally llm generated
-	
+
 	if held_object and not is_instance_valid(held_object):
 		drop_held_object()
-	
+
 	# gravity stuff \o/
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		time_since_floor += delta
+	else:
+		time_since_floor = 0.0
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or time_since_floor < coyote_time):
 		velocity.y = JUMP_VELOCITY
+		time_since_floor = coyote_time + 1.0
 
 	# physical movement
 	var accel_to_use = ACCEL if is_on_floor() else AIR_ACCEL
@@ -88,11 +94,11 @@ func _physics_process(delta: float) -> void:
 
 	if collider and collider is RigidBody3D and collider != held_object:
 		var pickable = collider.get_node_or_null("PickableObject")
-	
+
 		if pickable != current_highlighted:
 			if current_highlighted:
 				current_highlighted.unhighlight()
-		
+
 			current_highlighted = pickable
 			if current_highlighted:
 				current_highlighted.highlight()
@@ -100,29 +106,29 @@ func _physics_process(delta: float) -> void:
 		if current_highlighted:
 			current_highlighted.unhighlight()
 			current_highlighted = null
-	
+
 	# some more object stufffff
-	
+
 	if held_object:
 		var target_pos = $Pivot/Camera3D/HoldPoint.global_position
 		var current_pos = held_object.global_position
-		
+
 		# Calculate the vector from object to hand
 		var objdirection = target_pos - current_pos
 		var distance = objdirection.length()
-		
+
 		# Apply velocity to 'pull' the object to the hand
 		# The further away it is, the faster it pulls
 		held_object.linear_velocity = objdirection * PULL_POWER
-		
+
 		# Optional: Stop rotation while held
-		held_object.angular_velocity = Vector3.ZERO 
-		
+		held_object.angular_velocity = Vector3.ZERO
+
 		# Optional: Drop if it gets too far (e.g., stuck behind a wall)
 		if distance > 2.0:
 			drop_held_object()
-	
-	#yay! 
+
+	#yay!
 	move_and_slide()
 
 
