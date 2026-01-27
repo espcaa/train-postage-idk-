@@ -26,10 +26,13 @@ volumetric_fog_albedo = Color(1, 0.7529412, 1, 1)
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
+[node name="PlayerController" parent="." unique_id=770856701 instance=ExtResource("2_0s8vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7665751, 0)
+
 [node name="ground" parent="." unique_id=871154244 instance=ExtResource("1_pmgw1")]
 
-[node name="PlayerController" parent="ground" unique_id=770856701 instance=ExtResource("2_0s8vl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7665751, 0)
+[node name="wall" parent="." unique_id=1860903752 instance=ExtResource("1_pmgw1")]
+transform = Transform3D(0.09386501, 0.9955849, 0, -0.9955849, 0.09386501, 0, 0, 0, 1, 2.6085286, 2.3168051, -1.42381)
 
 [node name="ground2" parent="." unique_id=2123383041 instance=ExtResource("1_pmgw1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9297943, 0, -5.2965736)

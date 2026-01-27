@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqdhpig7qnq60"]
+[gd_scene format=3 uid="uid://bqdhpig7qnq60"]
 
 [ext_resource type="Script" uid="uid://bjhg2jw4daq80" path="res://assets/godot/player_controller.gd" id="1_qku4l"]
 [ext_resource type="PackedScene" uid="uid://b82p568v27n36" path="res://assets/godot/hud.tscn" id="2_ycn37"]
@@ -7,31 +7,32 @@
 radius = 0.40576172
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ycn37"]
-radius = 0.13578627
+radius = 0.001
 
-[node name="PlayerController" type="CharacterBody3D"]
+[node name="PlayerController" type="CharacterBody3D" unique_id=2061733524]
 script = ExtResource("1_qku4l")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1887998381]
 shape = SubResource("CapsuleShape3D_yy5vu")
 
-[node name="Pivot" type="Node3D" parent="."]
+[node name="Pivot" type="Node3D" parent="." unique_id=1014085090]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Pivot"]
+[node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=132736610]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4594165, 0)
 
-[node name="Hud" parent="Pivot/Camera3D" instance=ExtResource("2_ycn37")]
+[node name="Hud" parent="Pivot/Camera3D" unique_id=1087214471 instance=ExtResource("2_ycn37")]
 
-[node name="RayCast3D" type="RayCast3D" parent="Pivot/Camera3D"]
+[node name="RayCast3D" type="RayCast3D" parent="Pivot/Camera3D" unique_id=922639011]
 transform = Transform3D(-4.371139e-08, 0, -0.99999994, 0, 0.99999994, 0, 1, 0, -4.3711385e-08, 0, 0, 0)
 target_position = Vector3(-2, 0, 0)
 
-[node name="HoldPoint" type="StaticBody3D" parent="Pivot/Camera3D"]
+[node name="HoldPoint" type="StaticBody3D" parent="Pivot/Camera3D" unique_id=1352422096]
+transform = Transform3D(1, 0, 0, 0, 0.9354255, -0.35352382, 0, 0.35352382, 0.9354255, 0.99960387, -0.44357026, -1.1423376)
+collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Camera3D/HoldPoint"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1859224, 0, -0.8657712)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Camera3D/HoldPoint" unique_id=1311800283]
 shape = SubResource("SphereShape3D_ycn37")
 
-[node name="joint" type="Generic6DOFJoint3D" parent="."]
+[node name="joint" type="Generic6DOFJoint3D" parent="." unique_id=711315891]
 node_b = NodePath("../Pivot/Camera3D/HoldPoint")
