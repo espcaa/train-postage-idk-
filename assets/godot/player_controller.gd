@@ -6,11 +6,12 @@ const JUMP_VELOCITY = 4.5
 
 const AIR_ACCEL = 3.0
 
+var held_object: RigidBody3D = null
+
 @export var MOUSE_SENSITIVITY: float = 0.1
 
 var mouse_input := Vector2.ZERO
 var current_highlighted: PickableObject = null
-var held_body: RigidBody3D = null
 
 
 func _ready() -> void:
@@ -23,14 +24,15 @@ func _input(event: InputEvent) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	# handle object picking with "pick_object" action
 	if event.is_action_pressed("pick_object"):
-		if held_body:
-			held_body = null
+		if held_object:
+			drop_held_object()
 		else:
 			if $Pivot/Camera3D/RayCast3D.is_colliding():
 				var collider = $Pivot/Camera3D/RayCast3D.get_collider()
 				if collider is RigidBody3D:
-					held_body = collider
+					grab_object(collider)
 
 
 func _process(_delta):
@@ -51,18 +53,6 @@ func _update_camera():
 
 
 func _physics_process(delta: float) -> void:
-	# object holding
-
-	if held_body:
-		var target_pos = $Pivot/Camera3D/HoldPoint.global_position
-		var dir = target_pos - held_body.global_position
-
-		var force = dir * 40.0  # tweak strength
-		held_body.apply_central_force(force)
-
-		# optional damping to stop jitter
-		held_body.linear_damp = 6.0
-
 	# gravity stuff \o/
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -109,3 +99,23 @@ func _physics_process(delta: float) -> void:
 					current_highlighted = null
 
 	move_and_slide()
+
+
+func drop_held_object() -> void:
+	if held_object:
+		held_object = null
+		$joint.node_a = NodePath("")
+
+
+func grab_object(body: RigidBody3D) -> void:
+	held_object = body
+	$joint.node_a = held_object.get_path()
+	$joint.node_b = $Pivot/Camera3D/HoldPoint.get_path()
+	var target = $Pivot/Camera3D/HoldPoint
+	var dir = target.global_position - body.global_position
+	var distance = dir.length()
+	while distance > 1.0:
+		dir = target.global_position - body.global_position
+		distance = dir.length()
+		body.apply_central_impulse(dir.normalized() * distance * 10.0)
+		await get_tree().process_frame

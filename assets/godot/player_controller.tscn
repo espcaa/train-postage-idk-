@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqdhpig7qnq60"]
+[gd_scene load_steps=5 format=3 uid="uid://bqdhpig7qnq60"]
 
 [ext_resource type="Script" uid="uid://bjhg2jw4daq80" path="res://assets/godot/player_controller.gd" id="1_qku4l"]
 [ext_resource type="PackedScene" uid="uid://b82p568v27n36" path="res://assets/godot/hud.tscn" id="2_ycn37"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yy5vu"]
 radius = 0.40576172
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ycn37"]
+radius = 0.13578627
 
 [node name="PlayerController" type="CharacterBody3D"]
 script = ExtResource("1_qku4l")
@@ -24,5 +27,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4594165, 0)
 transform = Transform3D(-4.371139e-08, 0, -0.99999994, 0, 0.99999994, 0, 1, 0, -4.3711385e-08, 0, 0, 0)
 target_position = Vector3(-2, 0, 0)
 
-[node name="HoldPoint" type="Marker3D" parent="Pivot/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35531998, 0.10067335, -0.8343091)
+[node name="HoldPoint" type="StaticBody3D" parent="Pivot/Camera3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Camera3D/HoldPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1859224, 0, -0.8657712)
+shape = SubResource("SphereShape3D_ycn37")
+
+[node name="joint" type="Generic6DOFJoint3D" parent="."]
+node_b = NodePath("../Pivot/Camera3D/HoldPoint")
