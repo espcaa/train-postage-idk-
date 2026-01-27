@@ -40,5 +40,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9297943, 0, -5.2965736)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1117290526]
 environment = SubResource("Environment_6kql7")
 
-[node name="package" parent="." unique_id=686249768 instance=ExtResource("3_fodur")]
+[node name="package" parent="." unique_id=16089238 instance=ExtResource("3_fodur")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2424164, 9, -1.2712946)

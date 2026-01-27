@@ -118,8 +118,8 @@ func drop_held_object() -> void:
 
 func grab_object(body: RigidBody3D) -> void:
 	held_object = body
-	
+
 	held_object.global_transform = $Pivot/Camera3D/HoldPoint.global_transform
-	
+
 	$joint.node_a = held_object.get_path()
 	$joint.node_b = $Pivot/Camera3D/HoldPoint.get_path()
