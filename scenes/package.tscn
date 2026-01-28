@@ -2,6 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://drfe8ut1dkexh" path="res://assets/3d-source/package.blend" id="1_y5vkf"]
 [ext_resource type="PackedScene" uid="uid://boraegb7htw56" path="res://scenes/pickable_object.tscn" id="2_bfkic"]
+[ext_resource type="Shader" uid="uid://2cotcy5pbmuy" path="res://scenes/outline.gdshader" id="2_bitfr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bfkic"]
+size = Vector3(0.92, 0.69, 0.58)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_38om8"]
+render_priority = 127
+shader = ExtResource("2_bitfr")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/size = 1.01999999955296
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfkic"]
+next_pass = SubResource("ShaderMaterial_38om8")
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y5vkf"]
 size = Vector3(0.9151001, 0.67736816, 0.5831299)
@@ -10,11 +26,17 @@ size = Vector3(0.9151001, 0.67736816, 0.5831299)
 
 [node name="package" parent="." unique_id=2022742761 instance=ExtResource("1_y5vkf")]
 
+[node name="Outline" type="MeshInstance3D" parent="package" unique_id=688773576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2046265, 0.0024544, 0)
+visible = false
+mesh = SubResource("BoxMesh_bfkic")
+surface_material_override/0 = SubResource("StandardMaterial3D_bfkic")
+
 [node name="collision" type="CollisionShape3D" parent="." unique_id=1213782755]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2046814, -0.0006713867, -0.0018920898)
 shape = SubResource("BoxShape3D_y5vkf")
 
 [node name="PickableObject" parent="." unique_id=953546671 node_paths=PackedStringArray("highlighted_meshes") instance=ExtResource("2_bfkic")]
-highlighted_meshes = [NodePath("../package/Cube_001"), NodePath("../package/Cube_003"), NodePath("../package/Cube_002")]
+highlighted_meshes = [NodePath("../package/Outline")]
 
 [editable path="package"]

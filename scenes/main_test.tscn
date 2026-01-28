@@ -42,3 +42,15 @@ environment = SubResource("Environment_6kql7")
 
 [node name="package" parent="." unique_id=16089238 instance=ExtResource("3_fodur")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2424164, 9, -1.2712946)
+
+[node name="package2" parent="." unique_id=409222107 instance=ExtResource("3_fodur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0038685799, 9, 1.3774941)
+
+[node name="package3" parent="." unique_id=1832529706 instance=ExtResource("3_fodur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3564452, 9, 0.022282124)
+
+[node name="package4" parent="." unique_id=1394966647 instance=ExtResource("3_fodur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2424164, 7.131382, -1.2712946)
+
+[node name="package5" parent="." unique_id=843000622 instance=ExtResource("3_fodur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2424164, 9.929348, -1.2712946)
