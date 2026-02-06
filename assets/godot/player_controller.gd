@@ -78,7 +78,7 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "forwards", "backwards")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
-	if direction:
+	if direction.length() > 0.001:
 		velocity.x = lerp(velocity.x, direction.x * SPEED, accel_to_use * delta)
 		velocity.z = lerp(velocity.z, direction.z * SPEED, accel_to_use * delta)
 	else:
@@ -112,13 +112,18 @@ func _physics_process(delta: float) -> void:
 
 func drop_held_object() -> void:
 	if held_object:
+		held_object.set_collision_mask_value(2, true)
+		held_object.set_collision_layer_value(3, true)
+		held_object.set_collision_layer_value(4, false)
 		held_object = null
 		$joint.node_a = NodePath("")
 
 
 func grab_object(body: RigidBody3D) -> void:
 	held_object = body
-
+	body.set_collision_mask_value(2, false)
+	body.set_collision_layer_value(3, false)
+	body.set_collision_layer_value(4, false)
 	held_object.global_transform = $Pivot/Camera3D/HoldPoint.global_transform
 
 	$joint.node_a = held_object.get_path()

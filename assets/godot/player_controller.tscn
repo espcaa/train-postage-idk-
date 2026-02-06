@@ -7,9 +7,12 @@
 radius = 0.40576172
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ycn37"]
+margin = 0.0
 radius = 0.001
 
 [node name="PlayerController" type="CharacterBody3D" unique_id=2061733524]
+collision_mask = 7
+platform_floor_layers = 4294967283
 script = ExtResource("1_qku4l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1887998381]
@@ -26,10 +29,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4594165, 0)
 [node name="RayCast3D" type="RayCast3D" parent="Pivot/Camera3D" unique_id=922639011]
 transform = Transform3D(-4.371139e-08, 0, -0.99999994, 0, 0.99999994, 0, 1, 0, -4.3711385e-08, 0, 0, 0)
 target_position = Vector3(-2, 0, 0)
+collision_mask = 7
 
 [node name="HoldPoint" type="StaticBody3D" parent="Pivot/Camera3D" unique_id=1352422096]
-transform = Transform3D(1, 0, 0, 0, 0.9354255, -0.35352382, 0, 0.35352382, 0.9354255, 0.99960387, -0.44357026, -1.1423376)
-collision_mask = 2
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 0.8471025, -0.54103684, -0.6623348)
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Camera3D/HoldPoint" unique_id=1311800283]
 shape = SubResource("SphereShape3D_ycn37")

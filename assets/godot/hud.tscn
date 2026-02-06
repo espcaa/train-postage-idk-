@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://b82p568v27n36"]
 
-[node name="Hud" type="CanvasLayer"]
+[ext_resource type="Script" uid="uid://dxfphkdjcwwq6" path="res://assets/godot/hud.gd" id="1_eijkh"]
 
-[node name="Control" type="Control" parent="."]
+[node name="Hud" type="CanvasLayer" unique_id=578684383]
+script = ExtResource("1_eijkh")
+
+[node name="Center" type="Control" parent="." unique_id=765903975]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -16,7 +19,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Crosshair" type="Label" parent="Center" unique_id=45685933]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -31,3 +34,34 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "+"
+
+[node name="TopLeft" type="Control" parent="." unique_id=839838198]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TopRight" type="Control" parent="." unique_id=1136882566]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="PerfContainer" type="MarginContainer" parent="TopRight" unique_id=693057533]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="FPS" type="Label" parent="TopRight/PerfContainer" unique_id=120585195]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Current fps: 60"
