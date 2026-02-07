@@ -112,18 +112,16 @@ func _physics_process(delta: float) -> void:
 
 func drop_held_object() -> void:
 	if held_object:
-		held_object.set_collision_mask_value(2, true)
-		held_object.set_collision_layer_value(3, true)
-		held_object.set_collision_layer_value(4, false)
+		held_object.remove_collision_exception_with(self)
+		remove_collision_exception_with(held_object)
 		held_object = null
 		$joint.node_a = NodePath("")
 
 
 func grab_object(body: RigidBody3D) -> void:
 	held_object = body
-	body.set_collision_mask_value(2, false)
-	body.set_collision_layer_value(3, false)
-	body.set_collision_layer_value(4, false)
+	held_object.add_collision_exception_with(self)
+	add_collision_exception_with(held_object)
 	held_object.global_transform = $Pivot/Camera3D/HoldPoint.global_transform
 
 	$joint.node_a = held_object.get_path()
