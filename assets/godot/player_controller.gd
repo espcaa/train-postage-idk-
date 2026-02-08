@@ -38,10 +38,10 @@ func _unhandled_input(event: InputEvent) -> void:
 					grab_object(collider)
 
 
-func _process(_delta):
+func _process(delta):
 	var joy_input := Input.get_vector("look-left", "look-right", "look-up", "look-down")
-	if joy_input != Vector2(0, 0):
-		mouse_input = joy_input * 20.0
+	if joy_input != Vector2.ZERO:
+		mouse_input += joy_input * 20.0 * delta * 60.0
 	_update_camera()
 
 

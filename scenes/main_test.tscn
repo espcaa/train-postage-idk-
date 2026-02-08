@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bey1mu3gy6m1t" path="res://assets/sky.png" id="3_aidbh"]
 [ext_resource type="PackedScene" uid="uid://kxfwlv6egyt2" path="res://scenes/package.tscn" id="3_fodur"]
 [ext_resource type="PackedScene" uid="uid://bu0vrf3d1a8r4" path="res://assets/train_wagon.tscn" id="4_6kql7"]
+[ext_resource type="PackedScene" uid="uid://c0ng8mlnjda4u" path="res://assets/3d-source/environment.blend" id="5_aidbh"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0g15s"]
 panorama = ExtResource("3_aidbh")
@@ -39,3 +40,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0038685799, 9, -1.2070563)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3564452, 9, 0.022282124)
 
 [node name="train_wagon" parent="." unique_id=431662279 instance=ExtResource("4_6kql7")]
+
+[node name="environment" parent="." unique_id=2024508277 instance=ExtResource("5_aidbh")]
+transform = Transform3D(0.020488692, 0, -0.9997901, 0, 1, 0, 0.9997901, 0, 0.020488692, 6.9926553, -2.4059026, 1.7406921)
