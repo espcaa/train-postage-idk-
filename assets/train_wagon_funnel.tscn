@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bu0vrf3d1a8r4"]
+[gd_scene format=3 uid="uid://d2ali7rnl2m63"]
 
-[ext_resource type="PackedScene" uid="uid://qd63361w2ff0" path="res://assets/3d-source/train_car.blend" id="1_86jnd"]
-[ext_resource type="LightmapGIData" uid="uid://do3wv6ootq7aj" path="res://assets/train_wagon.lmbake" id="2_tmsmi"]
+[ext_resource type="PackedScene" uid="uid://c48jxgss8nbxa" path="res://assets/3d-source/train_car_funnel.blend" id="1_u4nkp"]
+[ext_resource type="LightmapGIData" uid="uid://w34u21yrh6rv" path="res://assets/train_wagon_funnel.lmbake" id="2_y630k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_86jnd"]
 size = Vector3(4.448822, 0.6437378, 13.829346)
@@ -10,8 +10,6 @@ size = Vector3(4.448822, 0.6437378, 13.829346)
 size = Vector3(0.4267578, 4.011841, 13.840454)
 
 [node name="train_wagon" type="StaticBody3D" unique_id=431662279]
-
-[node name="train_car" parent="." unique_id=1426670873 instance=ExtResource("1_86jnd")]
 
 [node name="lights" type="Node3D" parent="." unique_id=1431958333]
 
@@ -174,5 +172,8 @@ shape = SubResource("BoxShape3D_tmsmi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1868818, 1.7736082, -0.22381592)
 shape = SubResource("BoxShape3D_tmsmi")
 
-[node name="train_funnel_lightmap" type="LightmapGI" parent="." unique_id=1227038902]
-light_data = ExtResource("2_tmsmi")
+[node name="train_car_funnel" parent="." unique_id=767315255 instance=ExtResource("1_u4nkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00025679544, -2.3841858e-07, -1.0609627e-05)
+
+[node name="train_funnel_lightmap" type="LightmapGI" parent="." unique_id=891423241]
+light_data = ExtResource("2_y630k")

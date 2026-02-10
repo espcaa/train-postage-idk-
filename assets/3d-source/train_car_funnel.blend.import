@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c0ng8mlnjda4u"
-path="res://.godot/imported/environment.blend-7ade9c1e34c54aaf670ffd6e56135426.scn"
+uid="uid://c48jxgss8nbxa"
+path="res://.godot/imported/train_car_funnel.blend-3649e15b6b1866ed902a75f591a7bc6d.scn"
 
 [deps]
 
-source_file="res://assets/3d-source/environment.blend"
-dest_files=["res://.godot/imported/environment.blend-7ade9c1e34c54aaf670ffd6e56135426.scn"]
+source_file="res://assets/3d-source/train_car_funnel.blend"
+dest_files=["res://.godot/imported/train_car_funnel.blend-3649e15b6b1866ed902a75f591a7bc6d.scn"]
 
 [params]
 
