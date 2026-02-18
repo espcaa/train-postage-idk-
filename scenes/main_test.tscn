@@ -40,5 +40,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00028288364, 0, -0.00076532
 [node name="environment" parent="." unique_id=989048083 instance=ExtResource("5_aidbh")]
 transform = Transform3D(0.020488692, 0, -0.9997901, 0, 1, 0, 0.9997901, 0, 0.020488692, 6.9926553, -2.4059026, 1.7406921)
 
-[node name="train_wagon2" parent="." unique_id=1287737877 instance=ExtResource("6_0g15s")]
+[node name="train_wagon2" parent="." unique_id=1025261297 instance=ExtResource("6_0g15s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.417062)

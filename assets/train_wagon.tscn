@@ -11,7 +11,7 @@ size = Vector3(0.4267578, 4.011841, 13.840454)
 
 [node name="train_wagon" type="StaticBody3D" unique_id=431662279]
 
-[node name="train_car" parent="." unique_id=1426670873 instance=ExtResource("1_86jnd")]
+[node name="train_car" parent="." unique_id=203952257 instance=ExtResource("1_86jnd")]
 
 [node name="lights" type="Node3D" parent="." unique_id=1431958333]
 
