@@ -1,46 +1,8 @@
 [gd_scene format=3 uid="uid://b4c4bet7lc0hy"]
 
-[ext_resource type="PackedScene" uid="uid://bc1dddx546i4e" path="res://assets/environment.tscn" id="1_wrfqv"]
+[ext_resource type="Script" uid="uid://b7c1b7xi3jsi4" path="res://scenes/environment_gen.gd" id="1_md853"]
+[ext_resource type="PackedScene" uid="uid://cqly7ukwrlt4p" path="res://scenes/blueprint.tscn" id="2_md853"]
 
 [node name="environment_gen" type="Node3D" unique_id=560002745]
-
-[node name="road_side" type="Node3D" parent="." unique_id=1709823102]
-
-[node name="env2" parent="road_side" unique_id=820067890 instance=ExtResource("1_wrfqv")]
-transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, -18.30169, 0.83543587, -8.38797)
-
-[node name="env3" parent="road_side" unique_id=213265571 instance=ExtResource("1_wrfqv")]
-transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, -42.3223, 5.0588408, -8.38797)
-
-[node name="env4" parent="road_side" unique_id=608805873 instance=ExtResource("1_wrfqv")]
-transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, -18.30169, 0.83543587, -32.755936)
-
-[node name="env5" parent="road_side" unique_id=501493317 instance=ExtResource("1_wrfqv")]
-transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, -42.3223, 5.0588408, -32.755936)
-
-[node name="env6" parent="road_side" unique_id=1973554632 instance=ExtResource("1_wrfqv")]
-transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, -18.30169, 0.83543587, 15.895706)
-
-[node name="env7" parent="road_side" unique_id=1938358951 instance=ExtResource("1_wrfqv")]
-transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, -42.3223, 5.0588408, 15.895706)
-
-[node name="road_side2" type="Node3D" parent="." unique_id=1733410972]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -13.562382)
-
-[node name="env2" parent="road_side2" unique_id=89284803 instance=ExtResource("1_wrfqv")]
-transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, -18.30169, 0.83543587, -8.38797)
-
-[node name="env3" parent="road_side2" unique_id=193646904 instance=ExtResource("1_wrfqv")]
-transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, -42.3223, 5.0588408, -8.38797)
-
-[node name="env4" parent="road_side2" unique_id=1426339022 instance=ExtResource("1_wrfqv")]
-transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, -18.301687, 0.83543587, 15.904619)
-
-[node name="env5" parent="road_side2" unique_id=1148069903 instance=ExtResource("1_wrfqv")]
-transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, -42.322308, 5.0588408, 15.904619)
-
-[node name="env6" parent="road_side2" unique_id=1356305599 instance=ExtResource("1_wrfqv")]
-transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, -18.301682, 0.83543587, -32.799644)
-
-[node name="env7" parent="road_side2" unique_id=911545119 instance=ExtResource("1_wrfqv")]
-transform = Transform3D(0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0, 1, -42.32231, 5.0588408, -32.799644)
+script = ExtResource("1_md853")
+chunk_scene = ExtResource("2_md853")
