@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://kxfwlv6egyt2" path="res://scenes/package.tscn" id="3_fodur"]
 [ext_resource type="PackedScene" uid="uid://bu0vrf3d1a8r4" path="res://assets/train_wagon.tscn" id="4_6kql7"]
 [ext_resource type="PackedScene" uid="uid://d2ali7rnl2m63" path="res://assets/train_wagon_funnel.tscn" id="6_0g15s"]
-[ext_resource type="PackedScene" uid="uid://bc1dddx546i4e" path="res://assets/environment.tscn" id="6_d1b5t"]
+[ext_resource type="PackedScene" uid="uid://b4c4bet7lc0hy" path="res://scenes/environment_gen.tscn" id="7_ccmjl"]
+[ext_resource type="LightmapGIData" uid="uid://bqdq8gdplcflb" path="res://scenes/main_test.lmbake" id="7_d1b5t"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0g15s"]
 panorama = ExtResource("3_aidbh")
@@ -22,14 +23,12 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 volumetric_fog_albedo = Color(0.6795086, 0.7957627, 1, 1)
 
-[sub_resource type="FogMaterial" id="FogMaterial_0g15s"]
-density = 0.4467
-edge_fade = 0.26390195
-
 [node name="main_test" type="Node3D" unique_id=1808961237]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1413198476]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(0.9033354, 0.4289352, 0, 0.04243785, -0.08937391, 0.99509376, 0.42683062, -0.8989032, -0.098937675, 0, 55.6083, 0)
+light_color = Color(0.97987837, 0.85306424, 0.89176697, 1)
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1117290526]
@@ -45,23 +44,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19861889, 2.2047777, -1.20
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46130908, 9, -20.222359)
 
 [node name="train_wagon" parent="." unique_id=431662279 instance=ExtResource("4_6kql7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00028288364, 0, -0.00076532364)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00028288364, 0, -0.47599363)
 
 [node name="train_wagon2" parent="." unique_id=1025261297 instance=ExtResource("6_0g15s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.417062)
 
-[node name="env1" parent="." unique_id=820067890 instance=ExtResource("6_d1b5t")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16.726847, -0.020339966, -5.893083)
+[node name="env" type="LightmapGI" parent="." unique_id=564021198]
+light_data = ExtResource("7_d1b5t")
 
-[node name="env2" parent="." unique_id=601989266 instance=ExtResource("6_d1b5t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.596821, 0, -8.38797)
-
-[node name="fog" type="FogVolume" parent="." unique_id=1404021777]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.28336, 0.20119143, 58.396942)
-size = Vector3(21, 10, 231)
-material = SubResource("FogMaterial_0g15s")
-
-[node name="fog2" type="FogVolume" parent="." unique_id=1277112632]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.780338, -6.533611, 58.396942)
-size = Vector3(21, 25.530396, 231)
-material = SubResource("FogMaterial_0g15s")
+[node name="environment_gen" parent="." unique_id=560002745 instance=ExtResource("7_ccmjl")]
