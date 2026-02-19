@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://kxfwlv6egyt2"]
 
+[ext_resource type="Script" uid="uid://cp4kud54recd0" path="res://scenes/package.gd" id="1_rfqn4"]
 [ext_resource type="PackedScene" uid="uid://drfe8ut1dkexh" path="res://assets/3d-source/package.blend" id="1_y5vkf"]
 [ext_resource type="PackedScene" uid="uid://boraegb7htw56" path="res://scenes/pickable_object.tscn" id="2_bfkic"]
 [ext_resource type="Shader" uid="uid://2cotcy5pbmuy" path="res://scenes/outline.gdshader" id="2_bitfr"]
@@ -72,10 +73,12 @@ size = Vector3(0.9151001, 0.67736816, 0.5831299)
 [node name="package" type="RigidBody3D" unique_id=409222107]
 collision_layer = 4
 collision_mask = 15
+script = ExtResource("1_rfqn4")
+package_color = Color(0, 0.70954216, 0.44579417, 1)
 
 [node name="package" parent="." unique_id=207587362 instance=ExtResource("1_y5vkf")]
 
-[node name="Cube_003" parent="package" index="1" unique_id=1306794839]
+[node name="Cube_003" parent="package" index="1" unique_id=1843050607]
 mesh = SubResource("ArrayMesh_svpcg")
 
 [node name="Outline" type="MeshInstance3D" parent="package" unique_id=688773576]

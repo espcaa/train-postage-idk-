@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bc1dddx546i4e"]
+
+[ext_resource type="PackedScene" uid="uid://c0ng8mlnjda4u" path="res://assets/3d-source/environment.blend" id="1_kx6dw"]
+[ext_resource type="LightmapGIData" uid="uid://bvjjq6ovw7xw1" path="res://assets/environment.lmbake" id="2_0v8r2"]
+
+[node name="env" type="Node3D" unique_id=820067890]
+
+[node name="environment" parent="." unique_id=1132160735 instance=ExtResource("1_kx6dw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14005494, 0, 1.1314651)
+
+[node name="bake_env" type="LightmapGI" parent="." unique_id=1702585039]
+light_data = ExtResource("2_0v8r2")
