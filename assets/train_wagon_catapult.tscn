@@ -1,17 +1,15 @@
-[gd_scene format=3 uid="uid://bu0vrf3d1a8r4"]
+[gd_scene format=3 uid="uid://d50ss55mfax3"]
 
-[ext_resource type="PackedScene" uid="uid://qd63361w2ff0" path="res://assets/3d-source/train_car.blend" id="1_86jnd"]
-[ext_resource type="LightmapGIData" uid="uid://do3wv6ootq7aj" path="res://assets/train_wagon.lmbake" id="2_tmsmi"]
+[ext_resource type="PackedScene" uid="uid://43mueh8q30j7" path="res://assets/3d-source/train_car_hole.blend" id="2_23m82"]
+[ext_resource type="LightmapGIData" uid="uid://do3wv6ootq7aj" path="res://assets/train_wagon.lmbake" id="2_w64sx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_86jnd"]
 size = Vector3(4.448822, 0.6437378, 13.829346)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tmsmi"]
-size = Vector3(0.4267578, 4.011841, 13.840454)
+size = Vector3(0.4267578, 4.011841, 4)
 
 [node name="train_wagon" type="StaticBody3D" unique_id=431662279]
-
-[node name="train_car" parent="." unique_id=1154827215 instance=ExtResource("1_86jnd")]
 
 [node name="lights" type="Node3D" parent="." unique_id=1431958333]
 
@@ -166,13 +164,27 @@ light_bake_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0075531006, -0.1781311, -0.23913574)
 shape = SubResource("BoxShape3D_86jnd")
 
-[node name="wall" type="CollisionShape3D" parent="." unique_id=1746811229]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1562893, 1.7736082, -0.22381592)
+[node name="wall2" type="CollisionShape3D" parent="." unique_id=55542293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1868818, 1.7736082, -3.162506)
 shape = SubResource("BoxShape3D_tmsmi")
 
-[node name="wall2" type="CollisionShape3D" parent="." unique_id=55542293]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1868818, 1.7736082, -0.22381592)
+[node name="wall3" type="CollisionShape3D" parent="." unique_id=1163536077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1300821, 1.7736082, -3.162506)
 shape = SubResource("BoxShape3D_tmsmi")
 
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=1775560187]
-light_data = ExtResource("2_tmsmi")
+light_data = ExtResource("2_w64sx")
+
+[node name="train_car_hole" parent="." unique_id=306502156 instance=ExtResource("2_23m82")]
+
+[node name="wall" type="CollisionShape3D" parent="." unique_id=1160557581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.187, 1.774, 5.151597)
+shape = SubResource("BoxShape3D_tmsmi")
+
+[node name="wall4" type="CollisionShape3D" parent="." unique_id=1124652052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13, 1.774, 5.152)
+shape = SubResource("BoxShape3D_tmsmi")
+
+[node name="wall5" type="CollisionShape3D" parent="." unique_id=1742794928]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.00031375885, 1.774, 6.7178636)
+shape = SubResource("BoxShape3D_tmsmi")

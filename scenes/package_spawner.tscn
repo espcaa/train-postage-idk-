@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://digmoa77cieod"]
+
+[ext_resource type="Script" uid="uid://288ipubvbmn1" path="res://scenes/package_spawner.gd" id="1_ammh7"]
+
+[node name="package_spawner" type="Node3D" unique_id=75287669]
+script = ExtResource("1_ammh7")

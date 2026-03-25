@@ -188,11 +188,8 @@ shape = SubResource("BoxShape3D_tmsmi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1868818, 1.7736082, -0.22381592)
 shape = SubResource("BoxShape3D_tmsmi")
 
-[node name="train_car_funnel" parent="." unique_id=766741809 instance=ExtResource("1_u4nkp")]
+[node name="train_car_funnel" parent="." unique_id=1544364416 instance=ExtResource("1_u4nkp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00025679544, -2.3841858e-07, -1.0609627e-05)
-
-[node name="train_funnel_lightmap" type="LightmapGI" parent="." unique_id=891423241]
-light_data = ExtResource("2_y630k")
 
 [node name="funnel" type="CollisionShape3D" parent="." unique_id=1534831915]
 transform = Transform3D(1, 0, 0, 0, 0.95993745, 0.28021437, 0, -0.28021437, 0.95993745, 0.080322266, 3.0044494, -6.3163695)
@@ -225,3 +222,6 @@ shape = SubResource("BoxShape3D_rlij4")
 [node name="funnel_top" type="CollisionShape3D" parent="." unique_id=631728887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028015137, 4.6964226, -4.629319)
 shape = SubResource("BoxShape3D_8jgav")
+
+[node name="lightmap" type="LightmapGI" parent="." unique_id=608341787]
+light_data = ExtResource("2_y630k")
