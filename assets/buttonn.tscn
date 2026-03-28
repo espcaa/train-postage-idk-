@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dv6flt2ryw7rg"]
+
+[ext_resource type="PackedScene" uid="uid://cocemujso2yse" path="res://assets/button_asset.tscn" id="1_2a851"]
+[ext_resource type="Script" uid="uid://disxmsnf35ovg" path="res://assets/buttonn.gd" id="1_jd4km"]
+[ext_resource type="PackedScene" uid="uid://boraegb7htw56" path="res://scenes/pickable_object.tscn" id="3_spka1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2a851"]
+size = Vector3(0.5716553, 0.679924, 0.5377197)
+
+[node name="buttonnnnn" type="RigidBody3D" unique_id=612225613]
+freeze = true
+script = ExtResource("1_jd4km")
+
+[node name="button" parent="." unique_id=256751509 instance=ExtResource("1_2a851")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=560501150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0076293945, 1.5874366, 0.0154418945)
+shape = SubResource("BoxShape3D_2a851")
+
+[node name="PickableObject" parent="." unique_id=576523972 node_paths=PackedStringArray("highlighted_meshes") instance=ExtResource("3_spka1")]
+highlighted_meshes = [NodePath("../button/Outline")]
+
+[editable path="button"]

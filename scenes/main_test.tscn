@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://digmoa77cieod" path="res://scenes/package_spawner.tscn" id="7_w6snl"]
 [ext_resource type="PackedScene" uid="uid://h6kpb7k0cu7r" path="res://scenes/catapult.tscn" id="9_14htr"]
 [ext_resource type="PackedScene" uid="uid://d50ss55mfax3" path="res://assets/train_wagon_catapult.tscn" id="9_w6snl"]
+[ext_resource type="PackedScene" uid="uid://dv6flt2ryw7rg" path="res://assets/buttonn.tscn" id="10_14htr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0g15s"]
 panorama = ExtResource("3_aidbh")
@@ -27,6 +28,8 @@ volumetric_fog_albedo = Color(0.6795086, 0.7957627, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w6snl"]
 size = Vector3(1000, 1, 1000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_14htr"]
 
 [node name="main_test" type="Node3D" unique_id=1808961237]
 script = ExtResource("1_ccmjl")
@@ -69,5 +72,18 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.1
 [node name="collisionboxxx" type="CollisionShape3D" parent="worldborder" unique_id=1656704872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -292.8156, 0)
 shape = SubResource("BoxShape3D_w6snl")
+
+[node name="collisionthingies" type="Node3D" parent="." unique_id=2046040841]
+
+[node name="border" type="StaticBody3D" parent="collisionthingies" unique_id=1722999936]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collisionthingies/border" unique_id=849922635]
+shape = SubResource("BoxShape3D_14htr")
+
+[node name="buttonnnnn" parent="." unique_id=612225613 instance=ExtResource("10_14htr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5576322, 1.6400497, 2.8083916)
+
+[node name="buttonnnnn2" parent="." unique_id=1859499315 instance=ExtResource("10_14htr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5820792, 1.6400497, 0.27896604)
 
 [connection signal="body_entered" from="worldborder" to="." method="_on_worldborder_body_entered"]
