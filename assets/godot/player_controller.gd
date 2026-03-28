@@ -72,6 +72,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		time_since_floor = coyote_time + 1.0
 
+
 	# physical movement
 	var accel_to_use = ACCEL if is_on_floor() else AIR_ACCEL
 
