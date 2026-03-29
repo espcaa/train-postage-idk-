@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ha5v0q3lo4mu"
 path.s3tc="res://.godot/imported/train_car_hole_Wood Floor Deck Diff 4K.jpg-eca4bcff421428132e977079e52a9884.s3tc.ctex"
+path.etc2="res://.godot/imported/train_car_hole_Wood Floor Deck Diff 4K.jpg-eca4bcff421428132e977079e52a9884.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/3d-source/train_car_hole_Wood Floor Deck Diff 4K.jpg"
-dest_files=["res://.godot/imported/train_car_hole_Wood Floor Deck Diff 4K.jpg-eca4bcff421428132e977079e52a9884.s3tc.ctex"]
+dest_files=["res://.godot/imported/train_car_hole_Wood Floor Deck Diff 4K.jpg-eca4bcff421428132e977079e52a9884.s3tc.ctex", "res://.godot/imported/train_car_hole_Wood Floor Deck Diff 4K.jpg-eca4bcff421428132e977079e52a9884.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjw6y8vp6lf4q"
 path.s3tc="res://.godot/imported/train_car_1794.jpg-6702e06f4f9e642d4fbba7f981931c8e.s3tc.ctex"
+path.etc2="res://.godot/imported/train_car_1794.jpg-6702e06f4f9e642d4fbba7f981931c8e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/3d-source/train_car_1794.jpg"
-dest_files=["res://.godot/imported/train_car_1794.jpg-6702e06f4f9e642d4fbba7f981931c8e.s3tc.ctex"]
+dest_files=["res://.godot/imported/train_car_1794.jpg-6702e06f4f9e642d4fbba7f981931c8e.s3tc.ctex", "res://.godot/imported/train_car_1794.jpg-6702e06f4f9e642d4fbba7f981931c8e.etc2.ctex"]
 
 [params]
 

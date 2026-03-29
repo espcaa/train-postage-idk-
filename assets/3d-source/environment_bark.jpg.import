@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8r345tlcm5no"
 path.s3tc="res://.godot/imported/environment_bark.jpg-a4664700bf2abc00b8b34bd74a5de37b.s3tc.ctex"
+path.etc2="res://.godot/imported/environment_bark.jpg-a4664700bf2abc00b8b34bd74a5de37b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d-source/environment_bark.jpg"
-dest_files=["res://.godot/imported/environment_bark.jpg-a4664700bf2abc00b8b34bd74a5de37b.s3tc.ctex"]
+dest_files=["res://.godot/imported/environment_bark.jpg-a4664700bf2abc00b8b34bd74a5de37b.s3tc.ctex", "res://.godot/imported/environment_bark.jpg-a4664700bf2abc00b8b34bd74a5de37b.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccvtivsl1fqfg"
 path.s3tc="res://.godot/imported/train_car_hole_Downscaled PNG.png-a64dfafc0604dba90ba7310aed1e74bc.s3tc.ctex"
+path.etc2="res://.godot/imported/train_car_hole_Downscaled PNG.png-a64dfafc0604dba90ba7310aed1e74bc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/3d-source/train_car_hole_Downscaled PNG.png"
-dest_files=["res://.godot/imported/train_car_hole_Downscaled PNG.png-a64dfafc0604dba90ba7310aed1e74bc.s3tc.ctex"]
+dest_files=["res://.godot/imported/train_car_hole_Downscaled PNG.png-a64dfafc0604dba90ba7310aed1e74bc.s3tc.ctex", "res://.godot/imported/train_car_hole_Downscaled PNG.png-a64dfafc0604dba90ba7310aed1e74bc.etc2.ctex"]
 
 [params]
 

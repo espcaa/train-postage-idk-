@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgv6lea3eos7a"
 path.s3tc="res://.godot/imported/environment_coast_sand_rocks_02_diff_1k.jpg-cda8612ae16f28da3e006c3e3ab29a2f.s3tc.ctex"
+path.etc2="res://.godot/imported/environment_coast_sand_rocks_02_diff_1k.jpg-cda8612ae16f28da3e006c3e3ab29a2f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/3d-source/environment_coast_sand_rocks_02_diff_1k.jpg"
-dest_files=["res://.godot/imported/environment_coast_sand_rocks_02_diff_1k.jpg-cda8612ae16f28da3e006c3e3ab29a2f.s3tc.ctex"]
+dest_files=["res://.godot/imported/environment_coast_sand_rocks_02_diff_1k.jpg-cda8612ae16f28da3e006c3e3ab29a2f.s3tc.ctex", "res://.godot/imported/environment_coast_sand_rocks_02_diff_1k.jpg-cda8612ae16f28da3e006c3e3ab29a2f.etc2.ctex"]
 
 [params]
 

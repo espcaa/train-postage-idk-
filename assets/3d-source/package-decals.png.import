@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg2u5q62e6eci"
 path.s3tc="res://.godot/imported/package-decals.png-3b8723d31fef4123453d16cb8fd2d9c2.s3tc.ctex"
+path.etc2="res://.godot/imported/package-decals.png-3b8723d31fef4123453d16cb8fd2d9c2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d-source/package-decals.png"
-dest_files=["res://.godot/imported/package-decals.png-3b8723d31fef4123453d16cb8fd2d9c2.s3tc.ctex"]
+dest_files=["res://.godot/imported/package-decals.png-3b8723d31fef4123453d16cb8fd2d9c2.s3tc.ctex", "res://.godot/imported/package-decals.png-3b8723d31fef4123453d16cb8fd2d9c2.etc2.ctex"]
 
 [params]
 
