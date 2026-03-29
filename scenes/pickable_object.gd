@@ -1,5 +1,6 @@
 class_name PickableObject
 extends Node3D
+@export var pickable : bool = true
 
 @export var highlighted_meshes: Array[MeshInstance3D] = []
 

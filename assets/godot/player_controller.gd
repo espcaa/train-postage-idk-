@@ -72,7 +72,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		time_since_floor = coyote_time + 1.0
 
-
 	# physical movement
 	var accel_to_use = ACCEL if is_on_floor() else AIR_ACCEL
 
@@ -98,13 +97,16 @@ func _physics_process(delta: float) -> void:
 		if pickable != current_highlighted:
 			if current_highlighted:
 				current_highlighted.unhighlight()
+				$Pivot/Camera3D/Hud.pickup_possible = false
 
 			current_highlighted = pickable
 			if current_highlighted:
 				current_highlighted.highlight()
+				$Pivot/Camera3D/Hud.pickup_possible = true
 	else:
 		if current_highlighted:
 			current_highlighted.unhighlight()
+			$Pivot/Camera3D/Hud.pickup_possible = false
 			current_highlighted = null
 
 	#yay!
@@ -120,6 +122,17 @@ func drop_held_object() -> void:
 
 
 func grab_object(body: RigidBody3D) -> void:
+	# verify it's a pickable object
+
+	var pickable = body.get_node_or_null("PickableObject")
+	if not pickable:
+		return
+	if pickable.pickable == false:
+		# run picked_up() if it exists
+		if body.has_method("picked_up"):
+			body.picked_up()
+		return
+
 	held_object = body
 	held_object.add_collision_exception_with(self)
 	add_collision_exception_with(held_object)

@@ -61,7 +61,6 @@ script = ExtResource("2_utk6f")
 
 [node name="Outline" type="MeshInstance3D" parent="." index="4" unique_id=767084143]
 transform = Transform3D(0.35, 0, 0, 0, 0.296, 0, 0, 0, 0.35, 0, 3.21467, 0)
-visible = false
 mesh = SubResource("ArrayMesh_858ij")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_qs4h2")

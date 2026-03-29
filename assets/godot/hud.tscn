@@ -35,6 +35,24 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "+"
 
+[node name="CenterRight" type="Control" parent="Center" unique_id=1943348332]
+anchors_preset = 0
+offset_left = 80.0
+offset_right = 120.0
+offset_bottom = 40.0
+
+[node name="Pickup" type="Label" parent="Center/CenterRight" unique_id=1974962048]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -22.5
+offset_right = 171.0
+offset_bottom = 22.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Tab to interact"
+
 [node name="TopLeft" type="Control" parent="." unique_id=839838198]
 layout_mode = 3
 anchors_preset = 0
