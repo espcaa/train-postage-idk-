@@ -11,7 +11,7 @@ margin = 0.0
 radius = 0.001
 
 [node name="PlayerController" type="CharacterBody3D" unique_id=2061733524]
-collision_mask = 7
+collision_mask = 23
 platform_floor_layers = 4294967283
 script = ExtResource("1_qku4l")
 

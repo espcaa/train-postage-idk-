@@ -59,6 +59,140 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ScoreLabel" type="Label" parent="TopLeft"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 32
+text = "Score: 0"
+
+[node name="WaveLabel" type="Label" parent="TopLeft"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 300.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 24
+text = "Wave 1"
+
+[node name="TopCenter" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+
+[node name="OrdersContainer" type="HBoxContainer" parent="TopCenter"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = 20.0
+offset_right = 170.0
+offset_bottom = 80.0
+grow_horizontal = 2
+alignment = 1
+theme_override_constants/separation = 10
+
+[node name="WaveBanner" type="Label" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -60.0
+offset_right = 300.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(300, 60)
+theme_override_colors/font_color = Color(1, 0.9, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 72
+text = "WAVE 2!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOver" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Overlay" type="ColorRect" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Panel" type="PanelContainer" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="GameOver/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="GameOver/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="ExpectedLabel" type="Label" parent="GameOver/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "You should've done Red!"
+horizontal_alignment = 1
+
+[node name="ExpectedColor" type="ColorRect" parent="GameOver/Panel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 80)
+size_flags_horizontal = 4
+color = Color(1, 0, 0, 1)
+
+[node name="StatsLabel" type="Label" parent="GameOver/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Score: 0  |  Wave: 1"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="GameOver/Panel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+theme_override_font_sizes/font_size = 24
+text = "Retry"
+
 [node name="TopRight" type="Control" parent="." unique_id=1136882566]
 layout_mode = 3
 anchors_preset = 1
@@ -83,3 +217,5 @@ theme_override_constants/margin_right = 10
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Current fps: 60"
+
+[connection signal="pressed" from="GameOver/Panel/VBox/RetryButton" to="." method="_on_retry_button_pressed"]

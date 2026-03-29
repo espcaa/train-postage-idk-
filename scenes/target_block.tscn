@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://target_block_001"]
+
+[ext_resource type="Script" uid="uid://target_block_scr" path="res://scenes/target_block.gd" id="1_tb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tb"]
+size = Vector3(20, 20, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tb"]
+size = Vector3(20, 20, 20)
+
+[node name="TargetBlock" type="Area3D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_tb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_tb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_tb")

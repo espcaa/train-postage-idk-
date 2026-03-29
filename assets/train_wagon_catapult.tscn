@@ -9,6 +9,12 @@ size = Vector3(4.448822, 0.6437378, 13.829346)
 [sub_resource type="BoxShape3D" id="BoxShape3D_tmsmi"]
 size = Vector3(0.4267578, 4.011841, 4)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_23m82"]
+size = Vector3(0.79248047, 4.213928, 7.7841797)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w64sx"]
+size = Vector3(1, 4.0740967, 3.3337402)
+
 [node name="train_wagon" type="StaticBody3D" unique_id=431662279]
 
 [node name="lights" type="Node3D" parent="." unique_id=1431958333]
@@ -164,14 +170,6 @@ light_bake_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0075531006, -0.1781311, -0.23913574)
 shape = SubResource("BoxShape3D_86jnd")
 
-[node name="wall2" type="CollisionShape3D" parent="." unique_id=55542293]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1868818, 1.7736082, -3.162506)
-shape = SubResource("BoxShape3D_tmsmi")
-
-[node name="wall3" type="CollisionShape3D" parent="." unique_id=1163536077]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1300821, 1.7736082, -3.162506)
-shape = SubResource("BoxShape3D_tmsmi")
-
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=1775560187]
 light_data = ExtResource("2_w64sx")
 
@@ -188,3 +186,23 @@ shape = SubResource("BoxShape3D_tmsmi")
 [node name="wall5" type="CollisionShape3D" parent="." unique_id=1742794928]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.00031375885, 1.774, 6.7178636)
 shape = SubResource("BoxShape3D_tmsmi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1188903101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2546358, 1.6069643, -3.1238475)
+shape = SubResource("BoxShape3D_23m82")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=312529459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.331429, 1.6069643, -3.1238475)
+shape = SubResource("BoxShape3D_23m82")
+
+[node name="human_border" type="StaticBody3D" parent="." unique_id=1289530023]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="human_border" unique_id=1681889791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.490177, 1.5370483, 1.7853494)
+shape = SubResource("BoxShape3D_w64sx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="human_border" unique_id=267843392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4161165, 1.5370483, 1.7853494)
+shape = SubResource("BoxShape3D_w64sx")
