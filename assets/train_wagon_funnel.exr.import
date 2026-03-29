@@ -4,15 +4,16 @@ importer="2d_array_texture"
 type="CompressedTexture2DArray"
 uid="uid://dfb0lgvfy74p0"
 path.bptc="res://.godot/imported/train_wagon_funnel.exr-a00b82bae332a409ed679dad50f6875f.bptc.ctexarray"
+path.astc="res://.godot/imported/train_wagon_funnel.exr-a00b82bae332a409ed679dad50f6875f.astc.ctexarray"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/train_wagon_funnel.exr"
-dest_files=["res://.godot/imported/train_wagon_funnel.exr-a00b82bae332a409ed679dad50f6875f.bptc.ctexarray"]
+dest_files=["res://.godot/imported/train_wagon_funnel.exr-a00b82bae332a409ed679dad50f6875f.bptc.ctexarray", "res://.godot/imported/train_wagon_funnel.exr-a00b82bae332a409ed679dad50f6875f.astc.ctexarray"]
 
 [params]
 

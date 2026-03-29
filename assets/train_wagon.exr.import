@@ -4,15 +4,16 @@ importer="2d_array_texture"
 type="CompressedTexture2DArray"
 uid="uid://b3raaloi6yjbc"
 path.bptc="res://.godot/imported/train_wagon.exr-993fa75bcdc7d4e9ad13b823d8cb4d96.bptc.ctexarray"
+path.astc="res://.godot/imported/train_wagon.exr-993fa75bcdc7d4e9ad13b823d8cb4d96.astc.ctexarray"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/train_wagon.exr"
-dest_files=["res://.godot/imported/train_wagon.exr-993fa75bcdc7d4e9ad13b823d8cb4d96.bptc.ctexarray"]
+dest_files=["res://.godot/imported/train_wagon.exr-993fa75bcdc7d4e9ad13b823d8cb4d96.bptc.ctexarray", "res://.godot/imported/train_wagon.exr-993fa75bcdc7d4e9ad13b823d8cb4d96.astc.ctexarray"]
 
 [params]
 
